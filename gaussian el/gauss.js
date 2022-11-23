@@ -105,27 +105,26 @@ function createMatrix(x, y) {
 // console.log('matrixB: ', matrixB)
 
 let matrixA = [
-  [1, 1, 0, 0],
-  [2, 2, 0, 0],
-  [0, 3, 3, 0],
-  [0, 0, 4, 4],
+  [1, 2, 5, 8, 9],
+  [0, 2, 5, 8, 9],
+  [0, 0, 5, 8, 9],
+  [4, 0, 7, 8, 9],
+  [4, 0, 7, 0, 9],
 ]
 
-let matrixB = [2, 4, 6, 8]
+let matrixB = [6, 7, 2, 6, 10]
 
 function gauss(A, B) {
-  // console.log(111, 'A: ', A, 'B: ', B)
   let temp //домноженная верхняя строка
-  console.log('Temp: ', temp)
   for (let i = 1; i < A.length; i++) {
     console.log(A[i])
     for (let j = 0; j < i; j++) {
-      console.log('i: ', i, 'j: ', j)
+      // console.log('J', j)
       if (A[i][j] === 0) continue
-      console.log('uuuuuu')
-      console.log('!', A[i][j], '!!', A[i - 1][j])
-      const k = A[i][j] / A[i - 1][j]
-      console.log('K: ', k)
+      console.log('i', i, 'j', j, A[i][j])
+      console.log('K', A[i][j], '/', A[i - 1][j])
+      const k = A[i][j] / A[i - i][j]
+      console.log('K', k)
       temp = A[i - 1].map((el) => el * k)
       A[i] = A[i].map((el, index) => el - temp[index])
       B[i] = B[i] - B[i - 1] * k
