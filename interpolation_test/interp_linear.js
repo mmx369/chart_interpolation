@@ -1,7 +1,7 @@
 const xValues = [2, 6, 8, 10, 15]
 const yValues = [30, 20, 10, 90, 100]
 
-export function linInterp(xValues, yValues) {
+function linInterp(xValues, yValues) {
   return function (x) {
     let startRangeIdx, endRangeIdx
     const closest = xValues.reduce((prev, curr) => {
@@ -38,6 +38,6 @@ export function linInterp(xValues, yValues) {
   }
 }
 
-// for (let i = 0; i <= xValues[xValues.length - 1]; i++) {
-//   console.log(i, ':', linInterp(xValues, yValues)(i))
-// }
+for (let i = 0; i <= xValues[xValues.length - 1]; i++) {
+  console.log(i, ':', linInterp(xValues, yValues)(i))
+}

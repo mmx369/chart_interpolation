@@ -7,8 +7,8 @@ import { NumberRange } from 'scichart/Core/NumberRange'
 
 import { linInterp } from '../interpolation_test/interp_linear'
 
-const xValues = [1, 2, 3, 4, 5]
-const yValues = [30, 20, 10, 50, 15]
+const xValues = [1, 2, 4, 7]
+const yValues = [2, 3, 1, 4]
 
 async function initSciChart() {
   SciChartSurface.setRuntimeLicenseKey(

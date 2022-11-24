@@ -1,7 +1,5 @@
-// var abs = Math.abs
-
 function array_fill(i, n, v) {
-  var a = []
+  let a = []
   for (; i < n; i++) {
     a.push(v)
   }
@@ -16,7 +14,6 @@ function array_fill(i, n, v) {
  */
 
 function gauss(A, x) {
-  // console.log(A, x)
   let i, k, j
 
   // Just make a single matrix
@@ -45,8 +42,6 @@ function gauss(A, x) {
       A[maxRow][k] = A[i][k]
       A[i][k] = tmp
     }
-
-    console.log('Swap rows:', A)
 
     // Make all rows below this one 0 in current column
     for (k = i + 1; k < n; k++) {
