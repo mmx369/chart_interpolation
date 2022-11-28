@@ -5,7 +5,7 @@ import { XyScatterRenderableSeries } from 'scichart/Charting/Visuals/RenderableS
 import { SciChartSurface } from 'scichart/Charting/Visuals/SciChartSurface'
 import { NumberRange } from 'scichart/Core/NumberRange'
 
-import { linInterp } from '../interpolation_test/interp_linear'
+import { cubicInterpol } from './cubicInterp/cubic_interp'
 
 const xValues = [1, 2, 4, 7]
 const yValues = [2, 3, 1, 4]
@@ -37,7 +37,7 @@ async function initSciChart() {
   const dataSeries = new XyDataSeries(wasmContext)
 
   for (let i = 1; i <= xValues[xValues.length - 1]; i = i + 0.03) {
-    dataSeries.append(i, linInterp(xValues, yValues)(i))
+    dataSeries.append(i, cubicInterpol(xValues, yValues)(i))
   }
 
   scatterSeries.dataSeries = dataSeries
